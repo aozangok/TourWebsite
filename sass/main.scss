@@ -1,3 +1,31 @@
+// importing abstract scss files
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// importing base scss files
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utility";
+
+// importing compoenent scss files
+@import "components/button";
+@import "components/composition.scss";
+
+// importing layout scss files
+
+@import "layout/header";
+@import "layout/grid";
+
+
+
+
+// importing pages scss files
+@import "pages/home";
+
+
+
 /*
 COLORS:
 
@@ -21,238 +49,3 @@ background: linear-gradient(90deg, rgba(229,229,242,1) 0%, rgba(221,228,225,1) 1
    rgba(77,169,70,1) 62%, 
    rgba(12,142,68,1) 94%);
 */
-
-$color-primary-light: #0b9729;
-$color-secondary-dark:#046c31;
-$color-grey-dark: #777;
-$color-white: #fff;
-
-
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-     /* to prevent any pre-given padding and margin from the browser */
-    box-sizing: inherit; /* total weidth und height are not added to the box */
-}
-
-
-html {
-    font-size: 62.5%; /* 1rem = 10px */
-
-}
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /*font-size: 16px; */
-  line-height: 1.7;
-  color: $color-grey-dark;
-  padding: 3rem;
-  box-sizing: border-box;
-}
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right,
-  rgba(229, 229, 242, 0.5) 0%, rgba(221, 228, 225, 0.5) 11%, rgba($color-primary-light,0.5) 39%, rgba($color-secondary-dark, 0.699) 100%),
-   url(../img/in_2.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
-  position: relative;
-}
-.header__logo-box{
-  position: absolute; /* we want to image to stay all the time at the same place*/
-  top:4rem; /*relative to parent element */
-  left: 4rem;
-}
-
-.header__logo {
-   height: 4.2rem;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  
-  backface-visibility: hidden; /*!-- remove the shaky heading */
-  margin-bottom: 4.5rem;
-
-}
-
-/*.heading-primary-main{
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 20px;
-
-  animation-name: moveInLeft;
-  animation-duration: 5s;
-  animation-timing-function: ease-out;
-
-
-
-} */
-
-.heading-primary--main{
-  display: block;
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 1rem;
-
-  animation-name: moveInLeft;
-  animation-duration: 5s;
-  animation-timing-function: ease-out;
-
-
-  /*
-  animation-delay: 2s;
-  animation-iteration-count: 3;
-*/
-}
-
-.heading-primary--sub{
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 1.1rem;
-
-  
-  animation-name: moveInRight;
-  animation-duration: 5s;
-  animation-timing-function: ease-out;
-
-}
-
-.header__text-box {
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);            /*!-- 50 percent of the element left and top- */
-  text-align: center; /* align all text in the text box to the center */
-}
-
-@keyframes moveInLeft {
-   0% {                       
-      opacity: 0;
-      transform: translateX(-10rem); 
-
-   }
-
-    80% {
-      transform: translateX(1rem);  
-
-    }
-
-   100% { 
-    
-    opacity: 1;
-    transform: translate(0);
-
-   }
-}
-
-@keyframes moveInRight {
-  0% {                       
-     opacity: 0;
-     transform: translateX(10rem); 
-
-  }
-
-   80% {
-     transform: translateX(-1rem);  
-
-   }
-
-  100% { 
-   
-   opacity: 1;
-   transform: translate(0);
-
-  }
-}
-
-@keyframes moveInBottom {
-  0% {                       
-     opacity: 0;
-     transform: translateY(10rem ); 
-
-  }
-
-   80% {
-     transform: translateY(-1rem);  
-
-   }
-
-  100% { 
-   
-   opacity: 1;
-   transform: translate(0);
-
-  }
-}
-
-.btn:link,
-.btn:visited{                                       /* link is a special state of btn element */
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    width: 50%;
-    font-size: 80%;
-
-    animation-name: moveInBottom;
-    animation-duration: 3s;
-    animation-timing-function: ease-out .75s; /* .75 delay */
-    animation-fill-mode: backwards;
-    font-size: 1.3rem;
-
-}
-
-.btn:hover {
-
-  transform: translateY(-0.3rem);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);        /* x y blur*/
-
-}
-.btn:active {
-
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);   
-}
-
-.btn--white {
-
-    background-color: #fff;
-    color:$color-grey-dark;
-}
-
-.btn::after {
-
-    content: "";
-    display: inline-block; /*the btn is also inline-block */
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position:absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /*defines the position of the element if they on of top eachother, this is behind */
-    transition: all .4s;
-
-}
-
-
-.btn--white::after {
-
-  background-color: #fff;
-}
-
-.btn:hover::after{                   /* this an after element when we hover on the element */
-
-  transform: scaleX(1.4) scaleY(1.2);
-  opacity: 0;
-}

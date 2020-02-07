@@ -1,0 +1,31 @@
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right,
+  rgba(229, 229, 242, 0.5) 0%, rgba(221, 228, 225, 0.5) 11%, rgba($color-primary-medium,0.5) 39%, rgba($color-secondary-dark, 0.699) 100%),
+   url(../img/in_2.jpg);
+  background-size:cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
+  position: relative;
+
+  &__logo-box{
+    position: absolute; /* we want to image to stay all the time at the same place*/
+    top:4rem; /*relative to parent element */
+    left: 4rem;
+  }
+  
+
+  &__logo {
+     height: 4.2rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);            /*!-- 50 percent of the element left and top- */
+    text-align: center; /* align all text in the text box to the center */
+  }
+
+}

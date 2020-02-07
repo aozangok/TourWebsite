@@ -1,0 +1,158 @@
+
+.btn {
+
+
+  &:link,
+  &:visited{                                       /* link is a special state of btn element */
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all .2s;
+      position: relative;
+      width: 50%;
+      font-size: 80%;
+  
+      animation-name: moveInBottom;
+      animation-duration: 3s;
+      animation-timing-function: ease-out .75s; /* .75 delay */
+      animation-fill-mode: backwards;
+      font-size: 1.3rem;
+  
+  }
+  
+  &:hover {
+  
+    transform: translateY(-0.3rem);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);        /* x y blur*/
+  
+  }
+  &:active {
+  
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);   
+  }
+  
+  &--white {
+  
+      background-color: #fff;
+      color:$color-grey-dark;
+  }
+  
+  &::after {
+  
+      content: "";
+      display: inline-block; /*the btn is also inline-block */
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position:absolute;
+      top: 0;
+      left: 0;
+      z-index: -1; /*defines the position of the element if they on of top eachother, this is behind */
+      transition: all .4s;
+  
+  }
+  
+  
+  
+  &--white::after {
+  
+    background-color: #fff;
+  }
+  
+&:link,
+&:visited{                                       /* link is a special state of btn element */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    width: 50%;
+    font-size: 80%;
+
+    animation-name: moveInBottom;
+    animation-duration: 3s;
+    animation-timing-function: ease-out .75s; /* .75 delay */
+    animation-fill-mode: backwards;
+    font-size: 1.3rem;
+
+}
+
+&:hover {
+
+  transform: translateY(-0.3rem);
+  box-shadow: 0 10px 20px rgba($color-black, 0.2);        /* x y blur*/
+
+  &::after{                   /* this an after element when we hover on the element */
+
+    transform: scaleX(1.4) scaleY(1.2);
+    opacity: 0;
+  }
+  
+
+}
+&:active {
+
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);   
+}
+
+&--white {
+
+    background-color: #fff;
+    color:$color-grey-dark;
+    &::after {
+
+      background-color: #fff;
+    }
+}
+
+&::after {
+
+    content: "";
+    display: inline-block; /*the btn is also inline-block */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /*defines the position of the element if they on of top eachother, this is behind */
+    transition: all .4s;
+
+}
+
+}
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color:$color-primary-light;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 0.1rem solid $color-primary-light;
+    padding: 0.3rem;
+    transition: all .3s;
+    
+  }
+
+  &:hover{
+
+    background-color: $color-primary-light;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px);
+
+  }
+
+  &:active{
+    box-shadow: 0 0.5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+
+  }
+}
+

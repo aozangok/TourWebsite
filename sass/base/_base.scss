@@ -1,0 +1,18 @@
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+     /* to prevent any pre-given padding and margin from the browser */
+    box-sizing: inherit; /* total weidth und height are not added to the box */
+}
+
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+
+}
+body {
+  box-sizing: border-box;
+}
