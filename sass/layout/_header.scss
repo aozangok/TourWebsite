@@ -2,8 +2,8 @@
 .header {
   height: 95vh;
   background-image: linear-gradient(to right,
-  rgba(229, 229, 242, 0.5) 0%, rgba(221, 228, 225, 0.5) 11%, rgba($color-primary-medium,0.5) 39%, rgba($color-secondary-dark, 0.699) 100%),
-   url(../img/in_2.jpg);
+  rgba(229, 229, 242, 0.5) 0%, rgba(221, 228, 225, 0.5) 11%, rgba($color-primary-medium,0.5) 39%, rgba($color-secondary-dark, 0.699) 100%);
+  // url(../img/in_2.jpg);
   background-size:cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100%);
