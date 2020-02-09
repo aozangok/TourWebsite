@@ -28,7 +28,17 @@
       transform: rotateY(180deg);
         &-1 {
 
-          background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark1);
+          background-image: linear-gradient(to right bottom, rgb(76, 247, 247),rgb(236, 132, 28));
+        }
+
+        &-2 {
+
+          background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        }
+
+        &-3 {
+
+          background-image: linear-gradient(to right bottom, $color-fourth-light, $color-fourth-dark);
         }
 
     }
@@ -49,10 +59,13 @@
 
   &__picture {
     background-size: cover;
-    height:23rem;
+    height:25rem;
     background-blend-mode: soft-light;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
     &--1{
 
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark1),
@@ -66,7 +79,6 @@
   }
 
     &--3{
-
     background-image:   url(../img/in_12.jpg);
   }
 
@@ -79,14 +91,14 @@
     text-transform: uppercase;
     color: $color-white;
     position: absolute;
-    top: 12rem;
-    right: 2rem;  
+    top: 15rem;
+    right: 0.3rem;  
     text-align: right;
     width: 60%;
 
   }
   &__heading-span {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 0.5rem;
    -webkit-box-decoration-break: clone; // seperate element and implement the properties
     box-decoration-break: clone;
      &--1 {
@@ -96,9 +108,17 @@
      }
      &--2 {
       background-image: linear-gradient(to right bottom, 
-      rgba($color-tertiary-light, .85), 
-      rgba($color-tertiary-dark, .7));
+      rgba($color-tertiary-light, .8), 
+      rgba($color-tertiary-dark, .9));
    }
+
+   &--3 {
+    background-image: linear-gradient(to right bottom, 
+    rgba($color-fourth-light, .8), 
+    rgba($color-fourth-dark, .9));
+ }
+
+   
 
      
   }
